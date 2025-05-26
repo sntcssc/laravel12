@@ -17,6 +17,24 @@
                 </flux:navlist.group>
             </flux:navlist>
 
+            {{-- Users --}}
+            <flux:navlist variant="outline">
+                <flux:navlist.group :heading="__('Users Managment')" expandable :expanded="false">
+                    <flux:navlist.item icon="user-group" :href="route('users.index')" :current="request()->routeIs('users.index')" wire:navigate>{{ __('View Users') }}</flux:navlist.item>
+                    <flux:navlist.item icon="user-group" :href="route('users.create')" :current="request()->routeIs('users.create')" wire:navigate>{{ __('Add New User') }}</flux:navlist.item>
+                </flux:navlist.group>
+
+                 {{-- Roles and Permission --}}
+                <flux:navlist.group :heading="__('Roles and Permissions')" expandable :expanded="false">
+                    <flux:navlist.item icon="user-group" :href="route('roles.index')" :current="request()->routeIs('roles.index')" wire:navigate>{{ __('Roles') }}</flux:navlist.item>
+                    <flux:navlist.item icon="user-group" :href="route('permissions.create')" :current="request()->routeIs('permissions.create')" wire:navigate>{{ __('Permissions') }}</flux:navlist.item>
+                </flux:navlist.group>
+
+                {{-- Single Item --}}
+                <flux:navlist.item href="#" icon="list-bullet">Transactions</flux:navlist.item>
+
+            </flux:navlist>
+
             <flux:spacer />
 
             <flux:navlist variant="outline">
