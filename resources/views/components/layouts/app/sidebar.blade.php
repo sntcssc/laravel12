@@ -19,15 +19,31 @@
 
             {{-- Users --}}
             <flux:navlist variant="outline">
-                <flux:navlist.group :heading="__('Users Managment')" expandable :expanded="false">
+                <flux:navlist.group :heading="__('Users Managment')" expandable :expanded="request()->routeIs('users.index', 'users.create')">
                     <flux:navlist.item icon="user-group" :href="route('users.index')" :current="request()->routeIs('users.index')" wire:navigate>{{ __('View Users') }}</flux:navlist.item>
                     <flux:navlist.item icon="user-group" :href="route('users.create')" :current="request()->routeIs('users.create')" wire:navigate>{{ __('Add New User') }}</flux:navlist.item>
                 </flux:navlist.group>
 
                  {{-- Roles and Permission --}}
-                <flux:navlist.group :heading="__('Roles and Permissions')" expandable :expanded="false">
+                <flux:navlist.group :heading="__('Roles and Permissions')" expandable :expanded="request()->routeIs('roles.index', 'permissions.create')">
                     <flux:navlist.item icon="user-group" :href="route('roles.index')" :current="request()->routeIs('roles.index')" wire:navigate>{{ __('Roles') }}</flux:navlist.item>
                     <flux:navlist.item icon="user-group" :href="route('permissions.create')" :current="request()->routeIs('permissions.create')" wire:navigate>{{ __('Permissions') }}</flux:navlist.item>
+                </flux:navlist.group>
+
+                 {{-- Academics --}}
+                <flux:navlist.group :heading="__('Academics')" expandable :expanded="request()->routeIs('programmes.index', 'batches.index', 'sections.index' )">
+                    <flux:navlist.item icon="user-group" :href="route('programmes.index')" :current="request()->routeIs('programmes.index')" wire:navigate>{{ __('Programmes') }}</flux:navlist.item>
+                    <flux:navlist.item icon="user-group" :href="route('batches.index')" :current="request()->routeIs('batches.index')" wire:navigate>{{ __('Batch') }}</flux:navlist.item>
+                    <flux:navlist.item icon="user-group" :href="route('sections.index')" :current="request()->routeIs('sections.index')" wire:navigate>{{ __('Sections') }}</flux:navlist.item>
+                </flux:navlist.group>
+
+                 {{-- Students --}}
+                <flux:navlist.group :heading="__('Students')" expandable :expanded="request()->routeIs('students.index', 'enrollments.index', 'alumni.index', 'attendances.index', 'leaves.index' )">
+                    <flux:navlist.item icon="user-group" :href="route('students.index')" :current="request()->routeIs('students.index')" wire:navigate>{{ __('Students') }}</flux:navlist.item>
+                    <flux:navlist.item icon="user-group" :href="route('enrollments.index')" :current="request()->routeIs('enrollments.index')" wire:navigate>{{ __('Enrolments') }}</flux:navlist.item>
+                    <flux:navlist.item icon="user-group" :href="route('alumni.index')" :current="request()->routeIs('alumni.index')" wire:navigate>{{ __('Alumni') }}</flux:navlist.item>
+                    <flux:navlist.item icon="user-group" :href="route('attendances.index')" :current="request()->routeIs('attendances.index')" wire:navigate>{{ __('Students Attendance') }}</flux:navlist.item>
+                    <flux:navlist.item icon="user-group" :href="route('leaves.index')" :current="request()->routeIs('leaves.index')" wire:navigate>{{ __('Leaves') }}</flux:navlist.item>
                 </flux:navlist.group>
 
                 {{-- Single Item --}}

@@ -123,4 +123,7 @@ return [
         'store' => env('APP_MAINTENANCE_STORE', 'database'),
     ],
 
+    // Subhankar added
+    'restrict_composite_course' => env('RESTRICT_COMPOSITE_COURSE', true),
+
 ];

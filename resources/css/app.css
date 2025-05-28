@@ -64,3 +64,24 @@ select:focus[data-flux-control] {
 /* \[:where(&)\]:size-4 {
     @apply size-4;
 } */
+
+
+body {
+    @apply bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100;
+}
+
+table {
+    @apply w-full border-collapse border border-gray-300 dark:border-gray-700;
+}
+
+th, td {
+    @apply border border-gray-300 dark:border-gray-700 p-2;
+}
+
+th {
+    @apply bg-gray-200 dark:bg-gray-800 font-bold;
+}
+
+input, button, select, textarea {
+    @apply transition duration-300;
+}
